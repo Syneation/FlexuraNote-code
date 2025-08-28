@@ -1,0 +1,37 @@
+<RCC>
+    <qresource prefix="/rec">
+        <file>image/B.jpg</file>
+        <file>image/back.png</file>
+        <file>image/by_width.png</file>
+        <file>image/center.png</file>
+        <file>image/color.png</file>
+        <file>image/copy.png</file>
+        <file>image/cursive.png</file>
+        <file>image/cut.png</file>
+        <file>image/font_size.png</file>
+        <file>image/left.png</file>
+        <file>image/logo_B.png</file>
+        <file>image/logo_info.png</file>
+        <file>image/logo_u.png</file>
+        <file>image/logo_Und.png</file>
+        <file>image/loup.png</file>
+        <file>image/minus.png</file>
+        <file>image/newFile.png</file>
+        <file>image/openFile.png</file>
+        <file>image/paste.png</file>
+        <file>image/plus.png</file>
+        <file>image/print.png</file>
+        <file>image/replace.png</file>
+        <file>image/right.png</file>
+        <file>image/saveAs.png</file>
+        <file>image/saveFile.png</file>
+        <file>image/secret.png</file>
+        <file>image/setting.png</file>
+        <file>image/text_fill_color.png</file>
+        <file>image/through.png</file>
+        <file>image/replay.png</file>
+        <file>image/icon_program.png</file>
+        <file>image/image (1).svg</file>
+    </qresource>
+    <qresource prefix="/new/prefix1"/>
+</RCC>
