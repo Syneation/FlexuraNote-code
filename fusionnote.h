@@ -47,6 +47,7 @@
 #include <QtPrintSupport/QPrinter>
 #include <QtPrintSupport/QPrintDialog>
 #include <QDesktopServices>
+#include <QAbstractTextDocumentLayout>
 #include <QDragEnterEvent>
 #include <QDropEvent>
 #include <QMimeData>
@@ -55,6 +56,9 @@
 #include <QColorDialog>
 #include <QTextBlock>
 #include <QTextCursor>
+#include <QTextFragment>
+#include <QTextImageFormat>
+#include <QTextLayout>
 #include <QWheelEvent>
 #include <QMainWindow>
 #include <QDateTime>
@@ -149,10 +153,9 @@ private slots:
 
     void on_actionSave_triggered();
 
-    void on_textEditor_selectionChanged();
-
     void updateCursorStatus();
 
+    void on_actionboldIcon_triggered();
 
     void on_actionSave_As_triggered();
 
@@ -199,8 +202,6 @@ private slots:
     void on_actionforwardIcon_triggered();
 
     void on_actionLine_Break_triggered();
-
-    void on_actionboldIcon_triggered();
 
     void on_actionitalicsIcon_triggered();
 
@@ -250,7 +251,6 @@ private slots:
 
     void on_actionStatus_Bar_triggered(bool checked);
 
-    void on_actionboldIcon_triggered(bool checked);
 
 private:
     Ui::NotepadPlus *ui;
@@ -276,6 +276,10 @@ private:
 
     // for search
     QList<QTextCursor> searchHighlights; // Для хранения выделений поиска
+
+    // for change size image
+    bool is_Image_At_Position(const QPoint &pos, QTextImageFormat &imageFormat);
+    void resizeImage(QTextImageFormat &imageFormat);
 
 //
 // for simple work with different tasks

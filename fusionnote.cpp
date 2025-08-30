@@ -91,6 +91,7 @@ NotepadPlus::NotepadPlus(QWidget *parent)
     ui->textEditor->viewport()->setAcceptDrops(false); // For the viewport text editor
 
     ui->textEditor->installEventFilter(this);
+    ui->textEditor->viewport()->installEventFilter(this);
     ui->textEditor->setLineWrapMode(QTextEdit::NoWrap);
     ui->actionLine_Break->setChecked(false);
     isLineWrapEnabled = false;
@@ -206,11 +207,31 @@ void NotepadPlus::dropEvent(QDropEvent *event)
                 ui->textEditor->setFont(defaultFont);
 
                 filePath = url.toLocalFile();
+
+                if (helper_image::isImageFormatSupport(filePath))
+                {
+                    if (helper_image::insertImage(this, cursor, filePath))
+                    {
+                        helper_status::set_notifications(this, m_statusBar.notifications, "Image inserted successfully!");
+                        m_statusBar.path = "";
+                        return;
+                    }
+                    else
+                    {
+                        helper_status::set_notifications(this, m_statusBar.notifications, "ERROR: Image inserted FAILED!");
+                        m_statusBar.path = "";
+                        return;
+                    }
+
+                }
+
                 if (helper_file::open_file(this, m_statusBar.path, filePath, ui->textEditor))
                 {
+
                     helper_status::set_notifications(this, m_statusBar.notifications, "Open file success");
                     setWindowTitle(m_statusBar.path + " - FusionNote");
                     helper_status::set_encoding(this, helper_file::get_encoding(m_statusBar.path));
+                    helper_status::set_path(this, m_statusBar.path, m_statusBar.path);
                 }
                 break; // read only 1 file
             }
@@ -310,11 +331,102 @@ bool NotepadPlus::eventFilter(QObject *obj, QEvent *event)
         }
     }
 
+    // check click on image
+    if (obj == ui->textEditor->viewport() && event->type() == QEvent::MouseButtonDblClick)
+    {
+        QMouseEvent *mouseEvent = static_cast<QMouseEvent*>(event);
+
+        QTextImageFormat imageFormatLocal;
+        if (is_Image_At_Position(mouseEvent->pos(), imageFormatLocal))
+        {
+            resizeImage(imageFormatLocal);
+            return true;
+        }
+    }
+
     if (event->type() == QEvent::DragEnter || event->type() == QEvent::DragMove || event->type() == QEvent::Drop)
         return false;
 
     // All other events are handled as standard
     return QMainWindow::eventFilter(obj, event);
+}
+
+bool NotepadPlus::is_Image_At_Position(const QPoint &pos, QTextImageFormat &imageFormat)
+{
+    QTextCursor cursor = ui->textEditor->cursorForPosition(pos);
+
+    // Проверяем текущую позицию и соседние символы
+    for (int offset = -2; offset <= 2; offset++) {
+        QTextCursor testCursor = cursor;
+        if (testCursor.movePosition(QTextCursor::NextCharacter, QTextCursor::MoveAnchor, offset)) {
+            QTextCharFormat charFormat = testCursor.charFormat();
+            if (charFormat.isImageFormat()) {
+                imageFormat = charFormat.toImageFormat();
+                return true;
+            }
+        }
+    }
+
+    return false;
+}
+
+void NotepadPlus::resizeImage(QTextImageFormat &imageFormat)
+{
+    bool ok;
+    int currentWidth = imageFormat.width();
+    int newWidth = QInputDialog::getInt(this,
+                                        "Изменение размера изображения",
+                                        "Введите новую ширину (пиксели):",
+                                        currentWidth,
+                                        10, 2000, 1, &ok);
+
+    if (ok && newWidth > 0)
+    {
+        // Сохраняем пропорции
+        int originalWidth = imageFormat.width();
+        int originalHeight = imageFormat.height();
+        double ratio = static_cast<double>(originalHeight) / originalWidth;
+        int newHeight = static_cast<int>(newWidth * ratio);
+
+        // Создаем новый формат с обновленными размерами
+        QTextImageFormat newFormat;
+        newFormat.setName(imageFormat.name());
+        newFormat.setWidth(newWidth);
+        newFormat.setHeight(newHeight);
+
+        // Находим и заменяем все вхождения этого изображения
+        QTextCursor cursor(ui->textEditor->document());
+        cursor.beginEditBlock(); // Начинаем группу изменений
+
+        while (!cursor.atEnd())
+        {
+            cursor.movePosition(QTextCursor::NextCharacter);
+            QTextCharFormat format = cursor.charFormat();
+
+            if (format.isImageFormat())
+            {
+                QTextImageFormat currentImageFormat = format.toImageFormat();
+                if (currentImageFormat.name() == imageFormat.name())
+                {
+                    // Сохраняем позицию курсора
+                    int position = cursor.position();
+
+                    // Удаляем старый символ изображения
+                    cursor.deletePreviousChar();
+
+                    // Вставляем новое изображение с обновленным размером
+                    cursor.insertImage(newFormat);
+
+                    // Возвращаем курсор на правильную позицию
+                    cursor.setPosition(position);
+                }
+            }
+        }
+
+        cursor.endEditBlock(); // Завершаем группу изменений
+
+        helper_status::set_notifications(this, m_statusBar.notifications, "Размер изображения изменен");
+    }
 }
 
 //
@@ -1689,20 +1801,3 @@ void NotepadPlus::onInfoWindowClosed()
 //
 // End Other Icons
 //
-
-
-void NotepadPlus::on_textEditor_selectionChanged()
-{
-
-}
-
-
-
-
-
-
-void NotepadPlus::on_actionboldIcon_triggered(bool checked)
-{
-
-}
-

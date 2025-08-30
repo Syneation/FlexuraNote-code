@@ -102,6 +102,64 @@ bool helper_image::insertImageFromFile(NotepadPlus *notepad, QTextCursor cursor)
 }
 
 //
+// insert image
+//
+bool helper_image::insertImage(NotepadPlus *notepad, QTextCursor cursor, QString pathImage)
+{
+    QTextImageFormat imageFormat;
+    QImage image(pathImage);
+    //
+    // check image
+    //
+
+    if (!isImageFormatSupport(pathImage))
+    {
+        QMessageBox::warning(notepad, "Image", "The image format is not supported!");
+        return false;
+    }
+    //
+    // End check Image
+    //
+
+    imageFormat.setName(pathImage);
+
+    // dialog choose size image
+    bool ok;
+    int maxWidth = 1000;
+
+    int selectedWidth = QInputDialog::getInt(notepad, "Image Size",
+                                             "Image Size Image width (pixels):",
+                                             qMin(image.width(), maxWidth),
+                                             10, 2000, 1, &ok);
+
+    // If the user deselects the image size, code will set the default image size.
+    if (!ok)
+    {
+        if (image.width() > maxWidth)
+        {
+            double ratio = (double) maxWidth / image.width();
+            imageFormat.setWidth(500);
+            imageFormat.setHeight(image.height() * ratio);
+            return true;
+        }
+        cursor.insertImage(imageFormat);
+        return true;
+    }
+
+    if (selectedWidth > 0)
+    {
+        double ratio = (double) selectedWidth / image.width();
+        int newHeight = image.height() * ratio;
+
+        imageFormat.setWidth(selectedWidth);
+        imageFormat.setHeight(newHeight);
+    }
+
+    cursor.insertImage(imageFormat);
+    return true;
+}
+
+//
 // check for image format
 //
 bool helper_image::isImageFormatSupport(QString fileNameImage)

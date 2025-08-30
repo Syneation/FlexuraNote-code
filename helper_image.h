@@ -44,6 +44,8 @@
 #include <QMimeData>
 #include <QDragEnterEvent>
 #include <QDropEvent>
+#include <QMouseEvent>
+#include <QMenu>
 #include <QImage>
 #include <QFileDialog>
 #include <QInputDialog>
@@ -55,9 +57,7 @@ public:
     helper_image();
 
     static bool insertImageFromFile(NotepadPlus *notepad, QTextCursor cursor);
-
-
-private:
+    static bool insertImage(NotepadPlus *notepad, QTextCursor cursor, QString pathImage);
     static bool isImageFormatSupport(QString fileNameImage);
 
 
