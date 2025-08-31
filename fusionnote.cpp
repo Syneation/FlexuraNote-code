@@ -355,7 +355,7 @@ bool NotepadPlus::is_Image_At_Position(const QPoint &pos, QTextImageFormat &imag
 {
     QTextCursor cursor = ui->textEditor->cursorForPosition(pos);
 
-    // Проверяем текущую позицию и соседние символы
+    // Checking the current position and adjacent characters
     for (int offset = -2; offset <= 2; offset++) {
         QTextCursor testCursor = cursor;
         if (testCursor.movePosition(QTextCursor::NextCharacter, QTextCursor::MoveAnchor, offset)) {
@@ -375,28 +375,28 @@ void NotepadPlus::resizeImage(QTextImageFormat &imageFormat)
     bool ok;
     int currentWidth = imageFormat.width();
     int newWidth = QInputDialog::getInt(this,
-                                        "Изменение размера изображения",
-                                        "Введите новую ширину (пиксели):",
+                                        "Changing the image size",
+                                        "Enter a new width (pixels):",
                                         currentWidth,
                                         10, 2000, 1, &ok);
 
     if (ok && newWidth > 0)
     {
-        // Сохраняем пропорции
+        // We keep the proportions
         int originalWidth = imageFormat.width();
         int originalHeight = imageFormat.height();
         double ratio = static_cast<double>(originalHeight) / originalWidth;
         int newHeight = static_cast<int>(newWidth * ratio);
 
-        // Создаем новый формат с обновленными размерами
+        // Creating a new format with updated dimensions
         QTextImageFormat newFormat;
         newFormat.setName(imageFormat.name());
         newFormat.setWidth(newWidth);
         newFormat.setHeight(newHeight);
 
-        // Находим и заменяем все вхождения этого изображения
+        // We find and replace all occurrences of this image
         QTextCursor cursor(ui->textEditor->document());
-        cursor.beginEditBlock(); // Начинаем группу изменений
+        cursor.beginEditBlock(); // Starting a group of changes
 
         while (!cursor.atEnd())
         {
@@ -408,16 +408,16 @@ void NotepadPlus::resizeImage(QTextImageFormat &imageFormat)
                 QTextImageFormat currentImageFormat = format.toImageFormat();
                 if (currentImageFormat.name() == imageFormat.name())
                 {
-                    // Сохраняем позицию курсора
+                    // Save pos cursor
                     int position = cursor.position();
 
-                    // Удаляем старый символ изображения
+                    // Deleting the old image symbol
                     cursor.deletePreviousChar();
 
-                    // Вставляем новое изображение с обновленным размером
+                    // Inserting a new image with the updated size
                     cursor.insertImage(newFormat);
 
-                    // Возвращаем курсор на правильную позицию
+                    // Moving the cursor back to the correct position
                     cursor.setPosition(position);
                 }
             }
@@ -425,7 +425,7 @@ void NotepadPlus::resizeImage(QTextImageFormat &imageFormat)
 
         cursor.endEditBlock(); // Завершаем группу изменений
 
-        helper_status::set_notifications(this, m_statusBar.notifications, "Размер изображения изменен");
+        helper_status::set_notifications(this, m_statusBar.notifications, "Completing the group of changes");
     }
 }
 
@@ -509,6 +509,7 @@ void NotepadPlus::updateSaveText(const QString& fileName)
             out << text;
             file.close();
         }
+        helper_status::set_path(this, m_statusBar.path, m_statusBar.path);
     }
 
 }
