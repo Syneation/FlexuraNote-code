@@ -113,6 +113,25 @@ QString helper_file::get_encoding(const QString& filePath)
 //
 // open file
 //
+QString helper_file::get_text_from_file(NotepadPlus *notepad, const QString path)
+{
+    notepad->currentFile = path;
+
+    QFile file(path);
+
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+    {
+        qDebug() << "File is not open!";
+        return "[ERROR] FILE NOT OPEN";
+    }
+
+    QTextStream in(&file);
+    QString text = in.readAll();
+    file.close();
+
+    return text;
+}
+
 bool helper_file::open_file(NotepadPlus *notepad, QString& status_bar_path, QTextEdit* textEdit)
 {
     QString fileName = QFileDialog::getOpenFileName(notepad, "Open the file", QString(), "Simple text file (*.txt);; Advanced text file (*.html);; All files (*.*)");

@@ -252,6 +252,9 @@ private slots:
     void on_actionStatus_Bar_triggered(bool checked);
 
 
+
+    void on_actionShow_Html_Code_triggered(bool checked);
+
 private:
     Ui::NotepadPlus *ui;
     InfoWindow *infoWindow; // for window info

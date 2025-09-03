@@ -1399,6 +1399,42 @@ void NotepadPlus::on_actionDark_triggered()
 // End change theme
 //
 
+//
+// Show html code
+//
+void NotepadPlus::on_actionShow_Html_Code_triggered(bool checked)
+{
+    if (checked)
+    {
+
+        if (m_statusBar.path == "None" || m_statusBar.path == " ")
+        {
+            ui->actionShow_Html_Code->setChecked(false);
+            QMessageBox::information(this, "Text", "The path to the text file was not found!");
+            helper_status::set_notifications(this, m_statusBar.notifications, "The path to the text file was not found!");
+            return;
+        }
+        else if (!m_statusBar.path.endsWith(".html"))
+        {
+            ui->actionShow_Html_Code->setChecked(false);
+            QMessageBox::information(this, "Text", "Please open the html file!");
+            helper_status::set_notifications(this, m_statusBar.notifications, "Please open the html file!");
+            return;
+        }
+
+        ui->textEditor->setPlainText(helper_file::get_text_from_file(this, m_statusBar.path));
+        helper_status::set_notifications(this, m_statusBar.notifications, "viewing the html code");
+    }
+    else
+    {
+        ui->textEditor->setHtml(helper_file::get_text_from_file(this, m_statusBar.path));
+        helper_status::set_notifications(this, m_statusBar.notifications, "viewing html code as text");
+    }
+}
+//
+// End Show Html Code
+//
+
 
 //
 // End The Settings Tab
@@ -1802,3 +1838,6 @@ void NotepadPlus::onInfoWindowClosed()
 //
 // End Other Icons
 //
+
+
+

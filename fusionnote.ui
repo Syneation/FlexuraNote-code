@@ -212,6 +212,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <addaction name="actionZoom_Reset"/>
     <addaction name="actionReset_Text_Settings"/>
     <addaction name="separator"/>
+    <addaction name="actionShow_Html_Code"/>
    </widget>
    <widget class="QMenu" name="menuAbout">
     <property name="title">
@@ -926,6 +927,17 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </property>
    <property name="text">
     <string>Status Bar</string>
+   </property>
+  </action>
+  <action name="actionShow_Html_Code">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Show Html Code</string>
    </property>
   </action>
  </widget>

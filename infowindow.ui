@@ -75,7 +75,7 @@
      </font>
     </property>
     <property name="text">
-     <string>version: 1.0 (beta test)</string>
+     <string>version: 2.0 (beta test)</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_3">

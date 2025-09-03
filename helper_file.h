@@ -55,6 +55,7 @@ class helper_file
 {
 public:
     static QString get_encoding(const QString& filePath);
+    static QString get_text_from_file(NotepadPlus *notepad, const QString path);
     static bool open_file(NotepadPlus *notepad, QString& status_bar_path, QTextEdit* textEdit);
     static bool open_file(NotepadPlus *notepad, QString& status_bar_path, const QString path, QTextEdit* textEdit);
     static void save_file(NotepadPlus *notepad, QString& currentFile);
