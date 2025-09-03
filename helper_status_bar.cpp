@@ -1,6 +1,6 @@
 /**
- * FusionNote - Text Editor
- * Copyright (c) 2024 Alexander (GitHub: Syneation)
+ * Flexura Note - Text Editor
+ * Copyright (c) 2025 Alexander (GitHub: Syneation)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -35,8 +35,8 @@
  * TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU.
  */
 #include "helper_status_bar.h"
-#include "fusionnote.h"
-#include "./ui_fusionnote.h"
+#include "FlexuraNote.h"
+#include "./ui_FlexuraNote.h"
 
 void helper_status::set_path(NotepadPlus* notepad, QString& path_file, QString new_path)
 {

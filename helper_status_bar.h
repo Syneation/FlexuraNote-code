@@ -1,6 +1,6 @@
 /**
- * FusionNote - Text Editor
- * Copyright (c) 2024 Alexander (GitHub: Syneation)
+ * Flexura Note - Text Editor
+ * Copyright (c) 2025 Alexander (GitHub: Syneation)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -40,7 +40,7 @@
 #ifndef HELPER_STATUS_BAR_H
 #define HELPER_STATUS_BAR_H
 
-#include "fusionnote.h"
+#include "FlexuraNote.h"
 
 class helper_status
 {

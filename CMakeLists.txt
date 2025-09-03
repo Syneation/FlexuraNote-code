@@ -16,9 +16,9 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets PrintSupport)
 
 set(PROJECT_SOURCES
         main.cpp
-        fusionnote.cpp
-        fusionnote.h
-        fusionnote.ui
+        FlexuraNote.cpp
+        FlexuraNote.h
+        FlexuraNote.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -36,7 +36,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         findwindow.h findwindow.cpp findwindow.ui
         replacewindow.h replacewindow.cpp replacewindow.ui
         helper_image.h helper_image.cpp
-        rtfparser.h rtfparser.cpp
+
 
 
 

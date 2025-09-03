@@ -1,6 +1,6 @@
 /**
- * FusionNote - Text Editor
- * Copyright (c) 2024 Alexander (GitHub: Syneation)
+ * Flexura Note - Text Editor
+ * Copyright (c) 2025 Alexander (GitHub: Syneation)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -35,7 +35,7 @@
  * TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU.
  */
 
-#include "fusionnote.h"
+#include "FlexuraNote.h"
 
 #include <QApplication>
 #include <QDebug>
