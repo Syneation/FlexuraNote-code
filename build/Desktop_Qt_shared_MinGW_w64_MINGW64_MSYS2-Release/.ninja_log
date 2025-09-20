@@ -1,0 +1,21 @@
+# ninja log v7
+22	273	7783461086327476	NotepadPlus_autogen/timestamp	662bfcad7fcca9fb
+22	273	7783461086327476	NotepadPlus_autogen/mocs_compilation.cpp	662bfcad7fcca9fb
+22	273	7783461086327476	D:/FusionNote(Qt)/FusionNote/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Release/NotepadPlus_autogen/timestamp	662bfcad7fcca9fb
+22	273	7783461086327476	D:/FusionNote(Qt)/FusionNote/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Release/NotepadPlus_autogen/mocs_compilation.cpp	662bfcad7fcca9fb
+1723	2910	7783417412119835	NotepadPlus_autogen/EWIEGA46WW/qrc_Resources.cpp	c0d7af271adba51c
+1723	2910	7783417412119835	D:/FusionNote(Qt)/FusionNote/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Release/NotepadPlus_autogen/EWIEGA46WW/qrc_Resources.cpp	c0d7af271adba51c
+2941	11898	7783417412669855	CMakeFiles/NotepadPlus.dir/helper_theme.cpp.obj	32db210a1433c52a
+2936	13128	7783417412619841	CMakeFiles/NotepadPlus.dir/helper_font_text.cpp.obj	7e7218a66b8b7eeb
+293	6035	7783461089037322	CMakeFiles/NotepadPlus.dir/findwindow.cpp.obj	aadbaf10f36cccba
+289	6034	7783461088997343	CMakeFiles/NotepadPlus.dir/infowindow.cpp.obj	8efb74ab967f6e18
+298	6063	7783461089097342	CMakeFiles/NotepadPlus.dir/replacewindow.cpp.obj	b1654a4c33a5727b
+2925	14186	7783417412509964	CMakeFiles/NotepadPlus.dir/helper_file.cpp.obj	7cd9ba2e354e56c2
+2914	15349	7783417412399831	CMakeFiles/NotepadPlus.dir/main.cpp.obj	7e9ef68575d04426
+13242	15366	7783417515680756	CMakeFiles/NotepadPlus.dir/NotepadPlus_autogen/EWIEGA46WW/qrc_Resources.cpp.obj	5b9fb7ab4f0b9d54
+285	6698	7783461088957330	CMakeFiles/NotepadPlus.dir/helper_status_bar.cpp.obj	b8c09381e3a491d9
+2910	16553	7783417412359825	CMakeFiles/NotepadPlus.dir/NotepadPlus_autogen/mocs_compilation.cpp.obj	c7d193c0ce9452cb
+275	9324	7783461088857322	CMakeFiles/NotepadPlus.dir/fusionnote.cpp.obj	95198526d4dba8fc
+11899	19566	7783417502250742	CMakeFiles/NotepadPlus.dir/helper_image.cpp.obj	86c9a599fdf58964
+13128	20035	7783417514540741	CMakeFiles/NotepadPlus.dir/rtfparser.cpp.obj	42a9257859e44a51
+9324	10726	7783461179346015	NotepadPlus.exe	75a3eb219627e33c

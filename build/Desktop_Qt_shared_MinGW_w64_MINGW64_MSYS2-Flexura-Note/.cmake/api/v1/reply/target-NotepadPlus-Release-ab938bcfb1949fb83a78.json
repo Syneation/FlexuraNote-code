@@ -1,0 +1,869 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "NotepadPlus.exe"
+		},
+		{
+			"path" : "NotepadPlus.pdb"
+		}
+	],
+	"backtrace" : 4,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"_qt_internal_create_executable",
+			"qt6_add_executable",
+			"qt_add_executable",
+			"install",
+			"target_link_libraries",
+			"set_target_properties",
+			"include",
+			"find_package",
+			"find_dependency",
+			"_qt_internal_find_qt_dependencies"
+		],
+		"files" : 
+		[
+			"D:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreMacros.cmake",
+			"CMakeLists.txt",
+			"D:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsTargets.cmake",
+			"D:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake",
+			"D:/msys64/mingw64/lib/cmake/Qt6/Qt6Config.cmake",
+			"D:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreTargets.cmake",
+			"D:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake",
+			"D:/msys64/mingw64/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+			"D:/msys64/mingw64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake",
+			"D:/msys64/mingw64/lib/cmake/Qt6Core5Compat/Qt6Core5CompatDependencies.cmake",
+			"D:/msys64/mingw64/lib/cmake/Qt6Core5Compat/Qt6Core5CompatConfig.cmake",
+			"D:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateTargets.cmake",
+			"D:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfig.cmake",
+			"D:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake",
+			"D:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiTargets.cmake",
+			"D:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake",
+			"D:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake",
+			"D:/msys64/mingw64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportTargets.cmake",
+			"D:/msys64/mingw64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportConfig.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 25,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 966,
+				"parent" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 637,
+				"parent" : 2
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 713,
+				"parent" : 3
+			},
+			{
+				"command" : 4,
+				"file" : 1,
+				"line" : 90,
+				"parent" : 0
+			},
+			{
+				"command" : 5,
+				"file" : 1,
+				"line" : 68,
+				"parent" : 0
+			},
+			{
+				"command" : 8,
+				"file" : 1,
+				"line" : 15,
+				"parent" : 0
+			},
+			{
+				"file" : 4,
+				"parent" : 7
+			},
+			{
+				"command" : 8,
+				"file" : 4,
+				"line" : 233,
+				"parent" : 8
+			},
+			{
+				"file" : 3,
+				"parent" : 9
+			},
+			{
+				"command" : 7,
+				"file" : 3,
+				"line" : 55,
+				"parent" : 10
+			},
+			{
+				"file" : 2,
+				"parent" : 11
+			},
+			{
+				"command" : 6,
+				"file" : 2,
+				"line" : 61,
+				"parent" : 12
+			},
+			{
+				"command" : 5,
+				"file" : 0,
+				"line" : 638,
+				"parent" : 2
+			},
+			{
+				"command" : 8,
+				"file" : 1,
+				"line" : 14,
+				"parent" : 0
+			},
+			{
+				"file" : 4,
+				"parent" : 15
+			},
+			{
+				"command" : 8,
+				"file" : 4,
+				"line" : 233,
+				"parent" : 16
+			},
+			{
+				"file" : 10,
+				"parent" : 17
+			},
+			{
+				"command" : 7,
+				"file" : 10,
+				"line" : 43,
+				"parent" : 18
+			},
+			{
+				"file" : 9,
+				"parent" : 19
+			},
+			{
+				"command" : 10,
+				"file" : 9,
+				"line" : 45,
+				"parent" : 20
+			},
+			{
+				"command" : 9,
+				"file" : 8,
+				"line" : 142,
+				"parent" : 21
+			},
+			{
+				"command" : 8,
+				"file" : 7,
+				"line" : 78,
+				"parent" : 22
+			},
+			{
+				"file" : 6,
+				"parent" : 23
+			},
+			{
+				"command" : 7,
+				"file" : 6,
+				"line" : 57,
+				"parent" : 24
+			},
+			{
+				"file" : 5,
+				"parent" : 25
+			},
+			{
+				"command" : 6,
+				"file" : 5,
+				"line" : 61,
+				"parent" : 26
+			},
+			{
+				"command" : 7,
+				"file" : 6,
+				"line" : 45,
+				"parent" : 24
+			},
+			{
+				"file" : 13,
+				"parent" : 28
+			},
+			{
+				"command" : 10,
+				"file" : 13,
+				"line" : 46,
+				"parent" : 29
+			},
+			{
+				"command" : 9,
+				"file" : 8,
+				"line" : 142,
+				"parent" : 30
+			},
+			{
+				"command" : 8,
+				"file" : 7,
+				"line" : 78,
+				"parent" : 31
+			},
+			{
+				"file" : 12,
+				"parent" : 32
+			},
+			{
+				"command" : 7,
+				"file" : 12,
+				"line" : 55,
+				"parent" : 33
+			},
+			{
+				"file" : 11,
+				"parent" : 34
+			},
+			{
+				"command" : 6,
+				"file" : 11,
+				"line" : 61,
+				"parent" : 35
+			},
+			{
+				"command" : 6,
+				"file" : 11,
+				"line" : 83,
+				"parent" : 35
+			},
+			{
+				"command" : 7,
+				"file" : 3,
+				"line" : 43,
+				"parent" : 10
+			},
+			{
+				"file" : 16,
+				"parent" : 38
+			},
+			{
+				"command" : 10,
+				"file" : 16,
+				"line" : 45,
+				"parent" : 39
+			},
+			{
+				"command" : 9,
+				"file" : 8,
+				"line" : 142,
+				"parent" : 40
+			},
+			{
+				"command" : 8,
+				"file" : 7,
+				"line" : 78,
+				"parent" : 41
+			},
+			{
+				"file" : 15,
+				"parent" : 42
+			},
+			{
+				"command" : 7,
+				"file" : 15,
+				"line" : 55,
+				"parent" : 43
+			},
+			{
+				"file" : 14,
+				"parent" : 44
+			},
+			{
+				"command" : 6,
+				"file" : 14,
+				"line" : 61,
+				"parent" : 45
+			},
+			{
+				"command" : 8,
+				"file" : 4,
+				"line" : 233,
+				"parent" : 8
+			},
+			{
+				"file" : 18,
+				"parent" : 47
+			},
+			{
+				"command" : 7,
+				"file" : 18,
+				"line" : 55,
+				"parent" : 48
+			},
+			{
+				"file" : 17,
+				"parent" : 49
+			},
+			{
+				"command" : 6,
+				"file" : 17,
+				"line" : 61,
+				"parent" : 50
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-O3 -DNDEBUG -std=gnu++17 -fdiagnostics-color=always"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 14,
+					"define" : "MINGW_HAS_SECURE_API=1"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_CORE5COMPAT_LIB"
+				},
+				{
+					"backtrace" : 14,
+					"define" : "QT_CORE_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_GUI_LIB"
+				},
+				{
+					"backtrace" : 14,
+					"define" : "QT_NEEDS_QMAIN"
+				},
+				{
+					"backtrace" : 14,
+					"define" : "QT_NO_DEBUG"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_PRINTSUPPORT_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_WIDGETS_LIB"
+				},
+				{
+					"backtrace" : 14,
+					"define" : "UNICODE"
+				},
+				{
+					"backtrace" : 14,
+					"define" : "WIN32"
+				},
+				{
+					"backtrace" : 14,
+					"define" : "WIN64"
+				},
+				{
+					"backtrace" : 14,
+					"define" : "WINVER=0x0A00"
+				},
+				{
+					"backtrace" : 14,
+					"define" : "_ENABLE_EXTENDED_ALIGNED_STORAGE"
+				},
+				{
+					"backtrace" : 14,
+					"define" : "_UNICODE"
+				},
+				{
+					"backtrace" : 14,
+					"define" : "_WIN32_WINNT=0x0A00"
+				},
+				{
+					"backtrace" : 14,
+					"define" : "_WIN64"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 0,
+					"path" : "D:/FusionNote(Qt)/FusionNote/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Flexura-Note/NotepadPlus_autogen/include"
+				},
+				{
+					"backtrace" : 14,
+					"isSystem" : true,
+					"path" : "D:/msys64/mingw64/include/qt6/QtCore"
+				},
+				{
+					"backtrace" : 14,
+					"isSystem" : true,
+					"path" : "D:/msys64/mingw64/include/qt6"
+				},
+				{
+					"backtrace" : 14,
+					"isSystem" : true,
+					"path" : "D:/msys64/mingw64/share/qt6/mkspecs/win32-g++"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "D:/msys64/mingw64/include/qt6/QtCore5Compat"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "D:/msys64/mingw64/include/qt6/QtWidgets"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "D:/msys64/mingw64/include/qt6/QtGui"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "D:/msys64/mingw64/include/qt6/QtPrintSupport"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					14,
+					14
+				],
+				"standard" : "17"
+			},
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				7,
+				9,
+				11,
+				13,
+				15,
+				18,
+				21,
+				24,
+				30
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"id" : "NotepadPlus_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "NotepadPlus_autogen::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "NotepadPlus::@6890427a1f51a3e7e1df",
+	"install" : 
+	{
+		"destinations" : 
+		[
+			{
+				"backtrace" : 5,
+				"path" : "bin"
+			}
+		],
+		"prefix" : 
+		{
+			"path" : "C:/Program Files (x86)/NotepadPlus"
+		}
+	},
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "-O3 -DNDEBUG",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "-mwindows",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "D:\\msys64\\mingw64\\lib\\libQt6Core5Compat.dll.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "D:\\msys64\\mingw64\\lib\\libQt6PrintSupport.dll.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "D:\\msys64\\mingw64\\lib\\libQt6Widgets.dll.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 13,
+				"fragment" : "D:\\msys64\\mingw64\\lib\\libQt6Gui.dll.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 14,
+				"fragment" : "D:\\msys64\\mingw64\\lib\\libQt6Core.dll.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 27,
+				"fragment" : "-lmpr",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 27,
+				"fragment" : "-luserenv",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 36,
+				"fragment" : "-lmingw32",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 36,
+				"fragment" : "D:\\msys64\\mingw64\\lib\\libQt6EntryPoint.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 37,
+				"fragment" : "-lshell32",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 46,
+				"fragment" : "-ld3d11",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 46,
+				"fragment" : "-ldxgi",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 46,
+				"fragment" : "-ldxguid",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 46,
+				"fragment" : "-ld3d12",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 51,
+				"fragment" : "-lcomdlg32",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 51,
+				"fragment" : "-lwinspool",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "NotepadPlus",
+	"nameOnDisk" : "NotepadPlus.exe",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				7,
+				9,
+				11,
+				13,
+				15,
+				18,
+				21,
+				24,
+				30
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				3,
+				6,
+				8,
+				10,
+				12,
+				14,
+				17,
+				20,
+				23,
+				25,
+				26,
+				27,
+				28
+			]
+		},
+		{
+			"name" : "Forms",
+			"sourceIndexes" : 
+			[
+				4,
+				16,
+				19,
+				22
+			]
+		},
+		{
+			"name" : "Resources",
+			"sourceIndexes" : 
+			[
+				5
+			]
+		},
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				29
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				31,
+				32
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 0,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Flexura-Note/NotepadPlus_autogen/mocs_compilation.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "FlexuraNote.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "FlexuraNote.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"path" : "FlexuraNote.ui",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"path" : "Resources.qrc",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"path" : "helper_file.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "helper_file.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "helper_status_bar.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "helper_status_bar.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "helper_font_text.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "helper_font_text.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "helper_theme.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "helper_theme.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "infowindow.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "infowindow.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "infowindow.ui",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"path" : "findwindow.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "findwindow.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "findwindow.ui",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"path" : "replacewindow.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "replacewindow.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "replacewindow.ui",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"path" : "helper_image.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "helper_image.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Flexura-Note/NotepadPlus_autogen/include/ui_FlexuraNote.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Flexura-Note/NotepadPlus_autogen/include/ui_infowindow.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Flexura-Note/NotepadPlus_autogen/include/ui_findwindow.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Flexura-Note/NotepadPlus_autogen/include/ui_replacewindow.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Flexura-Note/NotepadPlus_autogen/timestamp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Flexura-Note/NotepadPlus_autogen/EWIEGA46WW/qrc_Resources.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Flexura-Note/NotepadPlus_autogen/timestamp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Flexura-Note/NotepadPlus_autogen/EWIEGA46WW/qrc_Resources.cpp.rule",
+			"sourceGroupIndex" : 5
+		}
+	],
+	"type" : "EXECUTABLE"
+}

@@ -1,0 +1,9 @@
+D:/FusionNote(Qt)/FusionNote/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Flexura-Note/CMakeFiles/NotepadPlus.dir
+D:/FusionNote(Qt)/FusionNote/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Flexura-Note/CMakeFiles/edit_cache.dir
+D:/FusionNote(Qt)/FusionNote/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Flexura-Note/CMakeFiles/rebuild_cache.dir
+D:/FusionNote(Qt)/FusionNote/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Flexura-Note/CMakeFiles/list_install_components.dir
+D:/FusionNote(Qt)/FusionNote/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Flexura-Note/CMakeFiles/install.dir
+D:/FusionNote(Qt)/FusionNote/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Flexura-Note/CMakeFiles/install/local.dir
+D:/FusionNote(Qt)/FusionNote/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Flexura-Note/CMakeFiles/install/strip.dir
+D:/FusionNote(Qt)/FusionNote/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Flexura-Note/CMakeFiles/NotepadPlus_autogen_timestamp_deps.dir
+D:/FusionNote(Qt)/FusionNote/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Flexura-Note/CMakeFiles/NotepadPlus_autogen.dir

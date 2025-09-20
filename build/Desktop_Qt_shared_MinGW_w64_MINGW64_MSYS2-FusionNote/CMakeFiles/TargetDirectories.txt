@@ -1,0 +1,9 @@
+D:/FusionNote(Qt)/FusionNote/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-FusionNote/CMakeFiles/NotepadPlus.dir
+D:/FusionNote(Qt)/FusionNote/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-FusionNote/CMakeFiles/edit_cache.dir
+D:/FusionNote(Qt)/FusionNote/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-FusionNote/CMakeFiles/rebuild_cache.dir
+D:/FusionNote(Qt)/FusionNote/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-FusionNote/CMakeFiles/list_install_components.dir
+D:/FusionNote(Qt)/FusionNote/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-FusionNote/CMakeFiles/install.dir
+D:/FusionNote(Qt)/FusionNote/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-FusionNote/CMakeFiles/install/local.dir
+D:/FusionNote(Qt)/FusionNote/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-FusionNote/CMakeFiles/install/strip.dir
+D:/FusionNote(Qt)/FusionNote/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-FusionNote/CMakeFiles/NotepadPlus_autogen_timestamp_deps.dir
+D:/FusionNote(Qt)/FusionNote/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-FusionNote/CMakeFiles/NotepadPlus_autogen.dir

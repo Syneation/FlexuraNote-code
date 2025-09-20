@@ -1,0 +1,9 @@
+D:/NotepadPlus(Qt)/NotepadPlus/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug/qtc_Ninja/CMakeFiles/NotepadPlus.dir
+D:/NotepadPlus(Qt)/NotepadPlus/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug/qtc_Ninja/CMakeFiles/edit_cache.dir
+D:/NotepadPlus(Qt)/NotepadPlus/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug/qtc_Ninja/CMakeFiles/rebuild_cache.dir
+D:/NotepadPlus(Qt)/NotepadPlus/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug/qtc_Ninja/CMakeFiles/list_install_components.dir
+D:/NotepadPlus(Qt)/NotepadPlus/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug/qtc_Ninja/CMakeFiles/install.dir
+D:/NotepadPlus(Qt)/NotepadPlus/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug/qtc_Ninja/CMakeFiles/install/local.dir
+D:/NotepadPlus(Qt)/NotepadPlus/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug/qtc_Ninja/CMakeFiles/install/strip.dir
+D:/NotepadPlus(Qt)/NotepadPlus/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug/qtc_Ninja/CMakeFiles/NotepadPlus_autogen_timestamp_deps.dir
+D:/NotepadPlus(Qt)/NotepadPlus/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug/qtc_Ninja/CMakeFiles/NotepadPlus_autogen.dir
