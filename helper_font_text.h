@@ -48,32 +48,36 @@
 class helper_font_text
 {
 public:
-    static bool containsHtml(const QString& text);
-    static bool containsTag(const QString& text, const QString& tagName);
-    static bool isStrikeOutStyled(const QString& text);
-    static bool isBoldStyled(const QString& text);
-    static bool isItalicStyled(const QString& text);
-    static bool isUnderlineStyled(const QString& text);
+    //---------------------------------------------
+    // for check fonts
+    //---------------------------------------------
+    static bool isStrikeOutStyled(const QTextCursor& text_cursor);
+    static bool isBoldStyled(const QTextCursor& text_cursor);
+    static bool isItalicStyled(const QTextCursor& text_cursor);
+    static bool isUnderlineStyled(const QTextCursor& text_cursor);
+
     static QColor getBackgroundColor(const QString& text);
     static QString getFontFamily(const QString& text);
     static int getFontSize(const QString& text);
-    static bool hasStyle(const QString& text, const QString& styleName, const QString& styleValue);
-    static bool hasColor(const QString& text, const QColor& color);
-    static bool hasBackgroundColor(const QString& text, const QColor& color);
-    static bool hasFontFamily(const QString& text, const QString& fontFamily);
-    static bool hasFontSize(const QString& text, int fontSize);
+
+
+    //---------------------------------------------
+    // for set and get fonts
+    //---------------------------------------------
+    static QFont get_default_ff();
+    static void set_bold_ff(QTextEdit* textEdit, QTextCursor& cursor, const QString& selected_text, bool enable);
+    static void set_italics_ff(QTextEdit* textEdit, const QString& selected_text, bool enable);
+    static void set_underline_ff(QTextEdit* textEdit, const QString& selected_text, bool enable);
+    static void set_strike_through_ff(QTextEdit* textEdit, const QString& selected_text, bool enable);
+    static void set_selected_text_ff(const QFont& font, QTextCursor cursor);
+
+    static void clear_bold_italic_underline_strikethrough(QTextEdit* textEdit);
+
     static QString getStyleValue(const QString& text, const QString& styleName);
     static QColor getTextColor(const QString& text);
 
     static void Reset_Text_Format(QTextEdit* textEdit);
     static void set_default_ff(QTextCursor cursor, bool enable);
-
-    static QFont get_default_ff();
-    static void set_bold_ff(QTextEdit* textEdit, bool enable);
-    static void set_italics_ff(QTextEdit* textEdit, bool enable);
-    static void set_underline_ff(QTextEdit* textEdit, bool enable);
-    static void set_strike_through_ff(QTextCursor cursor, bool enable);
-    static void set_selected_text_ff(const QFont& font, QTextCursor cursor);
 };
 
 #endif // HELPER_FONT_TEXT_H

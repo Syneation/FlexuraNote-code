@@ -41,6 +41,7 @@
 #include "infowindow.h"
 #include "findwindow.h"
 #include "replacewindow.h"
+#include "MultiCursor.h"
 
 #include <iostream>
 #include <ostream>
@@ -48,6 +49,8 @@
 #include <QtPrintSupport/QPrintDialog>
 #include <QDesktopServices>
 #include <QAbstractTextDocumentLayout>
+#include <QKeyEvent>
+#include <QClipboard>
 #include <QDragEnterEvent>
 #include <QDropEvent>
 #include <QMimeData>
@@ -116,6 +119,12 @@ public:
     void find_text();
     void setSearchHighlightColor(const QColor& color);
 
+    // for fonts
+    bool checkClickOnFontBold = false;
+    bool checkClickOnFontItalics = false;
+    bool checkClickOnFontUnderline = false;
+    bool checkClickOnFontStrikeThrough = false;
+
 public slots:
     // find && replace
     void handleFindRequest(const FindWindow::find_work &work);
@@ -130,7 +139,6 @@ protected:
     void dropEvent(QDropEvent *event) override;
     // for check close main window
     void closeEvent(QCloseEvent *event);
-
 
 private slots:
     void onInfoWindowClosed(); // for info window
@@ -254,6 +262,12 @@ private slots:
 
 
     void on_actionShow_Html_Code_triggered(bool checked);
+
+    void on_textEditor_selectionChanged();
+
+    void on_actionShow_Html_Code_triggered();
+
+    void on_textEditor_textChanged();
 
 private:
     Ui::NotepadPlus *ui;
