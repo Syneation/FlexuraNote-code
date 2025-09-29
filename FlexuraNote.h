@@ -45,34 +45,43 @@
 
 #include <iostream>
 #include <ostream>
+
 #include <QtPrintSupport/QPrinter>
 #include <QtPrintSupport/QPrintDialog>
 #include <QDesktopServices>
 #include <QAbstractTextDocumentLayout>
 #include <QKeyEvent>
+#include <QWheelEvent>
+
 #include <QClipboard>
 #include <QDragEnterEvent>
 #include <QDropEvent>
 #include <QMimeData>
+
 #include <QMessageBox>
 #include <QFontDialog>
 #include <QColorDialog>
+
+#include <QTextEdit>
 #include <QTextBlock>
 #include <QTextCursor>
 #include <QTextFragment>
 #include <QTextImageFormat>
 #include <QTextLayout>
-#include <QWheelEvent>
+
+
 #include <QMainWindow>
 #include <QDateTime>
-#include <QTextEdit>
 #include <QImage>
 #include <QWidget>
 #include <QObject>
 #include <QTimer>
-#include <QFile>
+
 #include <QFont>
 #include <QUrl>
+
+#include <QFile>
+#include <QFileInfo>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -269,6 +278,8 @@ private slots:
 
     void on_textEditor_textChanged();
 
+    void update_window_title();
+
 private:
     Ui::NotepadPlus *ui;
     InfoWindow *infoWindow; // for window info
@@ -297,6 +308,9 @@ private:
     // for change size image
     bool is_Image_At_Position(const QPoint &pos, QTextImageFormat &imageFormat);
     void resizeImage(QTextImageFormat &imageFormat);
+
+    // for text editor
+    bool is_text_modified = false;
 
 //
 // for simple work with different tasks

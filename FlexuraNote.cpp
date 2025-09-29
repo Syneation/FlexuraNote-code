@@ -7,7 +7,7 @@
  * the Free Software Foundation, either version 2 of the License, or
  * (at your option) any later version.
  *
- * This program is distributed in the hope that it will be useful,
+ * This program is distributed in tfhe hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
@@ -113,7 +113,7 @@ NotepadPlus::NotepadPlus(QWidget *parent)
     //
     // auto save timer
     //
-    autoSaveTimer = new QTimer(this);  
+    autoSaveTimer = new QTimer(this);
 
     //
     // connecting signals to update the cursor position
@@ -147,6 +147,9 @@ void NotepadPlus::closeEvent(QCloseEvent *event)
 
     else if (m_statusBar.notifications == "Save file successfully" ||
              m_statusBar.notifications == QString("Save file successfully (%1)").arg(m_statusBar.tmp_count_save_file))
+        this->close();
+
+    else if (!ui->textEditor->document()->isModified())
         this->close();
 
     else if (ui->textEditor->toPlainText().isEmpty())
@@ -227,9 +230,9 @@ void NotepadPlus::dropEvent(QDropEvent *event)
 
                 if (helper_file::open_file(this, m_statusBar.path, filePath, ui->textEditor))
                 {
-
+                    QFileInfo fileInfo(m_statusBar.path);
                     helper_status::set_notifications(this, m_statusBar.notifications, "Open file success");
-                    setWindowTitle(m_statusBar.path + " - FusionNote");
+                    setWindowTitle(fileInfo.fileName() + " - FlexuraNote");
                     helper_status::set_encoding(this, helper_file::get_encoding(m_statusBar.path));
                     helper_status::set_path(this, m_statusBar.path, m_statusBar.path);
                 }
@@ -381,11 +384,11 @@ bool NotepadPlus::eventFilter(QObject *obj, QEvent *event)
                 }
             }
 
-            //------------------------------------
+            //-------------------------------------
             // copying the line where the cursor
             // is located and if the text is not
             // highlighted
-            //------------------------------------
+            //-------------------------------------
             if (keyEvent->modifiers() & Qt::ControlModifier && keyEvent->key() == Qt::Key_C
                 && !cursor.hasSelection())
             {
@@ -544,12 +547,14 @@ void NotepadPlus::updateSaveText(const QString& fileName)
     // check for text "Save file successfully" if we have then output "Save file successfully (count save)"
     // else "Save file successfully"
     //
+    QFileInfo fileInfo(m_statusBar.path);
+
     if (m_statusBar.notifications == "Save file successfully" ||
         m_statusBar.notifications == tmp_notifications)
     {
         m_statusBar.tmp_count_save_file++;
         helper_status::set_notifications(this, m_statusBar.notifications, QString("Save file successfully (%1)").arg(m_statusBar.tmp_count_save_file));
-        setWindowTitle(fileName + " - FusionNote");
+        setWindowTitle(fileInfo.fileName() + " - FlexuraNote");
         QTextStream out(&file);
         QString text = ui->textEditor->toPlainText();
         out << text;
@@ -560,7 +565,7 @@ void NotepadPlus::updateSaveText(const QString& fileName)
     {
         m_statusBar.tmp_count_save_file = 0;
         helper_status::set_notifications(this, m_statusBar.notifications, "Save file successfully");
-        setWindowTitle(fileName + " - FusionNote");
+        setWindowTitle(fileInfo.fileName() + " - FlexuraNote");
         m_statusBar.path = fileName;
         if (fileName.endsWith(".html"))
         {
@@ -591,8 +596,10 @@ void NotepadPlus::updateSaveAsText(const QString& fileName)
         QMessageBox::warning(this, "Warning", "Cannot save file: " + file.errorString());
         return;
     }
+    QFileInfo fileInfo(fileName);
+
     currentFile = fileName;
-    setWindowTitle(fileName + " - FusionNote");
+    setWindowTitle(fileInfo.fileName() + " - FlexuraNote");
     m_statusBar.path = fileName;
     helper_status::set_notifications(this, m_statusBar.notifications, "save as ... file successfully");
 
@@ -717,7 +724,8 @@ void NotepadPlus::on_actionOpen_triggered()
     if (check_open_file)
     {
         helper_status::set_notifications(this, m_statusBar.notifications, "Open file success");
-        setWindowTitle(m_statusBar.path + " - FusionNote");
+        QFileInfo fileInfo(m_statusBar.path);
+        setWindowTitle(fileInfo.fileName() + " - FlexuraNote");
         helper_status::set_encoding(this, helper_file::get_encoding(m_statusBar.path));
         helper_status::set_path(this, m_statusBar.path, m_statusBar.path);
     }
@@ -738,7 +746,8 @@ void NotepadPlus::on_actionopenFileIcon_triggered()
     if (check_open_file)
     {
         helper_status::set_notifications(this, m_statusBar.notifications, "Open file success");
-        setWindowTitle(m_statusBar.path + " - FusionNote");
+        QFileInfo fileInfo(m_statusBar.path);
+        setWindowTitle(fileInfo.fileName() + " - FlexuraNote");
         helper_status::set_encoding(this, helper_file::get_encoding(m_statusBar.path));
         helper_status::set_path(this, m_statusBar.path, m_statusBar.path);
     }
@@ -758,7 +767,7 @@ void NotepadPlus::on_actionnewFileIcon_triggered()
 {
     currentFile.clear();
     ui->textEditor->setText(QString());
-    setWindowTitle("FusionNote");
+    setWindowTitle("FlexuraNote");
     helper_status::set_path(this, m_statusBar.path, "No File");
     helper_status::set_encoding(this, "None");
     helper_status::set_notifications(this, m_statusBar.notifications, "The new file created success");
@@ -771,7 +780,7 @@ void NotepadPlus::on_actionNew_File_triggered()
 {
     currentFile.clear();
     ui->textEditor->setText(QString());
-    setWindowTitle("FusionNote");
+    setWindowTitle("FlexuraNote");
     helper_status::set_path(this, m_statusBar.path, "No File");
     helper_status::set_encoding(this, "None");
     helper_status::set_notifications(this, m_statusBar.notifications, "The new file created success");
@@ -1992,9 +2001,34 @@ void NotepadPlus::on_actionShow_Html_Code_triggered()
 
 }
 
-
+//------------------------------------------------------
+// if text editor changed then is_text_midified = true
+//------------------------------------------------------
 void NotepadPlus::on_textEditor_textChanged()
 {
+    if (ui->textEditor->document()->isModified())
+    {
+        update_window_title();
+    }
+
+}
+
+// and if text do not midified add *
+void NotepadPlus::update_window_title()
+{
+    QFileInfo fileInfo(m_statusBar.path);
+    QString title = fileInfo.fileName() + " - FlexuraNote";
+
+
+    if (m_statusBar.path != "None")
+    {
+        if (ui->textEditor->document()->isModified())
+            title += "*";
+
+    }
+
+    setWindowTitle(title);
+
 
 }
 

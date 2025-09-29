@@ -132,6 +132,9 @@ QString helper_file::get_text_from_file(NotepadPlus *notepad, const QString path
     return text;
 }
 
+//
+// to press the open button
+//
 bool helper_file::open_file(NotepadPlus *notepad, QString& status_bar_path, QTextEdit* textEdit)
 {
     QString fileName = QFileDialog::getOpenFileName(notepad, "Open the file", QString(), "Simple text file (*.txt);; Advanced text file (*.html);; All files (*.*)");
@@ -160,6 +163,9 @@ bool helper_file::open_file(NotepadPlus *notepad, QString& status_bar_path, QTex
     return true;
 }
 
+//
+// for drop event
+//
 bool helper_file::open_file(NotepadPlus *notepad, QString& status_bar_path, const QString path, QTextEdit* textEdit)
 {
     status_bar_path = path;
