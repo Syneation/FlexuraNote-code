@@ -124,6 +124,7 @@ public:
     // access to status-bar
     LStatus_bar& statusBarState() { return m_statusBar; }
 
+
     // for find
     void find_text();
     void setSearchHighlightColor(const QColor& color);
@@ -287,6 +288,9 @@ private:
     ReplaceWindow *replaceWindow; // for replace window
 
     LStatus_bar m_statusBar; // status bar status
+
+    // for check html mode
+    bool isHtmlMode;
 
     // timer for autosave
     QTimer *autoSaveTimer;

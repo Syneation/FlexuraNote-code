@@ -113,7 +113,7 @@ NotepadPlus::NotepadPlus(QWidget *parent)
     //
     // auto save timer
     //
-    autoSaveTimer = new QTimer(this);
+    autoSaveTimer = new QTimer(this);  
 
     //
     // connecting signals to update the cursor position
@@ -556,21 +556,29 @@ void NotepadPlus::updateSaveText(const QString& fileName)
         helper_status::set_notifications(this, m_statusBar.notifications, QString("Save file successfully (%1)").arg(m_statusBar.tmp_count_save_file));
         setWindowTitle(fileInfo.fileName() + " - FlexuraNote");
         QTextStream out(&file);
-        QString text = ui->textEditor->toPlainText();
-        out << text;
-        file.close();
-        helper_status::set_encoding(this, helper_file::get_encoding(m_statusBar.path));
-    }
-    else
-    {
-        m_statusBar.tmp_count_save_file = 0;
-        helper_status::set_notifications(this, m_statusBar.notifications, "Save file successfully");
-        setWindowTitle(fileInfo.fileName() + " - FlexuraNote");
-        m_statusBar.path = fileName;
-        if (fileName.endsWith(".html"))
+
+        //------------------------------------------------
+        //if the html file is in the format and
+        //the user has not chosen to view the code,
+        //then we simply show the plain text being
+        //converted from html, if the html code is
+        //being viewed, then convert to plain text
+        //with html styles and save so that the text
+        //is saved, not the code. Otherwise, just save
+        //the text.
+        //------------------------------------------------
+        if (fileName.endsWith(".html") && !isHtmlMode)
         {
             QTextStream out(&file);
             out << ui->textEditor->toHtml();
+            file.close();
+        }
+        else if (fileName.endsWith(".html") && isHtmlMode)
+        {
+            QString tmp_text = ui->textEditor->toPlainText();
+
+            QTextStream out(&file);
+            out << tmp_text;
             file.close();
         }
         else
@@ -580,6 +588,49 @@ void NotepadPlus::updateSaveText(const QString& fileName)
             out << text;
             file.close();
         }
+
+        helper_status::set_encoding(this, helper_file::get_encoding(m_statusBar.path));
+    }
+    else
+    {
+        m_statusBar.tmp_count_save_file = 0;
+        helper_status::set_notifications(this, m_statusBar.notifications, "Save file successfully");
+        setWindowTitle(fileInfo.fileName() + " - FlexuraNote");
+        m_statusBar.path = fileName;
+
+        //------------------------------------------------
+        //if the html file is in the format and
+        //the user has not chosen to view the code,
+        //then we simply show the plain text being
+        //converted from html, if the html code is
+        //being viewed, then convert to plain text
+        //with html styles and save so that the text
+        //is saved, not the code. Otherwise, just save
+        //the text.
+        //------------------------------------------------
+        if (fileName.endsWith(".html") && !isHtmlMode)
+        {
+            QTextStream out(&file);
+            out << ui->textEditor->toHtml();
+            file.close();
+        }
+        else if (fileName.endsWith(".html") && isHtmlMode)
+        {
+            QString tmp_text = ui->textEditor->toPlainText();
+
+            QTextStream out(&file);
+            out << tmp_text;
+            file.close();
+        }
+        else
+        {
+            QTextStream out(&file);
+            QString text = ui->textEditor->toPlainText();
+            out << text;
+            file.close();
+        }
+
+        helper_status::set_encoding(this, helper_file::get_encoding(m_statusBar.path));
         helper_status::set_path(this, m_statusBar.path, m_statusBar.path);
     }
 
@@ -1480,6 +1531,8 @@ void NotepadPlus::on_actionDark_triggered()
 //
 void NotepadPlus::on_actionShow_Html_Code_triggered(bool checked)
 {
+    QTextEdit* textEdit = ui->textEditor;
+
     if (checked)
     {
 
@@ -1498,12 +1551,15 @@ void NotepadPlus::on_actionShow_Html_Code_triggered(bool checked)
             return;
         }
 
-        ui->textEditor->setPlainText(helper_file::get_text_from_file(this, m_statusBar.path));
+        isHtmlMode = true;
+        ui->textEditor->setPlainText(textEdit->toHtml());
+        helper_font_text::Reset_Text_Format(ui->textEditor);
         helper_status::set_notifications(this, m_statusBar.notifications, "viewing the html code");
     }
     else
     {
-        ui->textEditor->setHtml(helper_file::get_text_from_file(this, m_statusBar.path));
+        isHtmlMode = false;
+        ui->textEditor->setHtml(textEdit->toPlainText());
         helper_status::set_notifications(this, m_statusBar.notifications, "viewing html code as text");
     }
 }
@@ -1718,7 +1774,7 @@ void NotepadPlus::on_actioncrossouttextIcon_triggered()
         return;
     }
 
-    helper_status::set_notifications(this, m_statusBar.notifications, "the font has been changed to underline");
+    helper_status::set_notifications(this, m_statusBar.notifications, "the font has been changed to strikeThrough");
 }
 //
 // End Icon Font Family Strike Through
@@ -2024,6 +2080,7 @@ void NotepadPlus::update_window_title()
     {
         if (ui->textEditor->document()->isModified())
             title += "*";
+
 
     }
 

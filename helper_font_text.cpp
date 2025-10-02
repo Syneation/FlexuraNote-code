@@ -474,10 +474,10 @@ void helper_font_text::set_strike_through_ff(QTextEdit* textEdit, const QString&
 
     QString newHtml;
 
-    if (enable && !hasUnderline)
+    if (enable && !hasStrikeThrough)
     {
         // Enable bold
-        if (hasBold && hasUnderline && hasStrikeThrough)
+        if (hasBold && hasUnderline && hasStrikeThrough && hasItalic)
             newHtml = "<b><i><u><s>" + selectedText + "</s></u></i></b>";
 
 
@@ -504,7 +504,7 @@ void helper_font_text::set_strike_through_ff(QTextEdit* textEdit, const QString&
             newHtml = "<s>" + selectedText + "</s>";
 
     }
-    else if (!enable && hasUnderline)
+    else if (!enable && hasStrikeThrough)
     {
         // Disable bold
         if (hasBold && hasItalic && hasUnderline)
@@ -537,6 +537,8 @@ void helper_font_text::set_strike_through_ff(QTextEdit* textEdit, const QString&
 
     else
         return;
+
+    cursor.insertHtml(newHtml);
 }
 
 //

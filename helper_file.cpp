@@ -163,6 +163,7 @@ bool helper_file::open_file(NotepadPlus *notepad, QString& status_bar_path, QTex
     return true;
 }
 
+
 //
 // for drop event
 //
